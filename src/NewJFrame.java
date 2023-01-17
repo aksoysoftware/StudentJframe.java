@@ -141,12 +141,17 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {
-        model.removeElement(txtName.getText());    }
+        model.removeElement(txtName.getText());
+        lblMessage.setText("Ogrenci Silindi");
+    }
 
     private void btnRemoveSelectedActionPerformed(java.awt.event.ActionEvent evt) {
         int index=lst.getAnchorSelectionIndex();//yoksa -1 döndürür
-        if(index>-1)
+        if(index>-1){
             model.removeElementAt(index);
+            lblMessage.setText("Ogrenci Silindi");
+        }
+
         else{
             lblMessage.setText("index bulunamadi");
         }
